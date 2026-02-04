@@ -28,3 +28,9 @@ if [[ $status -ne 2 ]]; then
   echo "google-java-format_linux (native) without arguments should have printed usage help and exited with 2, but did not :("
   exit 1
 fi
+
+core/target/google-java-format util/HelloWorld.java
+if [[ $? -ne 0 ]]; then
+  echo "google-java-format_linux (native) should have printed the formatted file and exited with 0, but did not :("
+  exit 1
+fi
